@@ -3,6 +3,8 @@ from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 import os
+from waitress import serve
+
 
 load_dotenv()
 
@@ -574,5 +576,8 @@ def logout():
     flash('You have been logged out', 'success')
     return redirect(url_for('login'))
 
+
+
+
 if __name__ == '__main__':
-    app.run(debug=False)
+    serve(app, host='0.0.0.0', port=5000)    
