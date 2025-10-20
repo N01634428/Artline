@@ -4,28 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in - Artline</title>
+    <link rel="stylesheet" href="/static/css/auth.css">
+    
+    
 </head>
 <body>
+
+    <header>
+        <div class="nav-img" style="color: black;">
+            <h1>ArtLine</h1>
+        </div>
+    </header>
 
     <div class="container">
 
         <h2>Artline</h2>
 
-        <form action="{{  url_for('login')}}" method="POST">
+        <form action="/login" id="log-in" method="POST">
 
-            <label for="email">Email:</label>
+         <div class="login">
+
+            <label for="email"></label>
             <input type="email" id="email" name="email" placeholder="Enter Your Email Address" required>
+            
+            <br>
 
-             <label for="password">Password:</label>
+             <label for="password"></label>
             <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
 
-            <button type="submit">Login</button>
+            <br>
 
-            <p>Don't Have an account</p>
-            <a href="{{ url_for('signup')}}">Sign Up</a>
+            <button id="button" type="submit">Login</button>
+            <br>
 
+            <div class="links">
+                <a href="#">Forgot Password?</a>
+                <p>Don't Have an account</p>
+             <a href="{{url_for('signup')}}">Sign Up</a>
 
-
+            </div>
+         </div>
         </form>
     </div>
 

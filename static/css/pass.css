@@ -1,0 +1,174 @@
+/* Reset default spacing and fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #f3f3f3;
+  color: white;
+  display: flex;
+  justify-content: flex-end; /* Align navbar items to the right */
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 80px;
+  position: fixed; /* Keep the navbar fixed at the top */
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  color: rgb(0, 0, 0);
+  margin-left: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Layout Container */
+.container {
+  display: flex;
+  height: calc(100vh - 80px); /* Full height minus navbar height */
+  padding-top: 80px; /* Push content down to avoid overlap with navbar */
+  width: 100%;
+}
+
+/* Sidebar */
+.side-bar {
+  width: 200px; /* Set the sidebar width */
+  background-color: #f3f3f3;
+  padding: 2rem 1rem;
+  color: rgb(0, 0, 0);
+  position: fixed; /* Keep the sidebar fixed on the left */
+  top: 80px; /* Align with the navbar */
+  bottom: 0; /* Make it extend to the bottom */
+  left: 0;
+}
+
+.side-bar ul {
+  list-style: none;
+}
+
+.side-bar li {
+  margin-bottom: 1.5rem;
+}
+
+.side-bar a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.side-bar a:hover {
+  background-color: #c4c9ce;
+}
+
+/* Main Content Area */
+.content {
+  flex: 1;
+  padding: 2rem;
+  
+  display: flex;
+  justify-content: center; /* Center the form */
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 220px; /* Space for the sidebar */
+  margin-right: 220px; /* Space for the right side */
+  width: 100%;
+}
+
+/* Form Container */
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Form Labels */
+label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+input:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+/* Submit Button */
+.add-button button {
+  width: 100%;
+  padding: 15px;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button button:hover {
+  background-color: #3742fa;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .side-bar {
+    width: 100%; /* Full width sidebar on smaller screens */
+    position: static; /* Make it normal flow */
+    top: 0;
+    padding: 1rem;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  form {
+    padding: 20px;
+    width: 90%;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .add-button button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}

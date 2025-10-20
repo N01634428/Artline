@@ -1,0 +1,168 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Message Box for Flash Messages */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+ul li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+ul .success {
+    background-color: #28a745;
+    color: white;
+}
+
+ul .error {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Form Layout */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #1e90ff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    height: 150px; /* fixed height for better layout */
+}
+
+/* Button Styles */
+button {
+    background-color: #1e90ff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.delete-button {
+    background-color: #1e90ff;
+    color: white;
+    margin: 50%;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #3742fa;
+}
+
+/* Delete Button */
+form button[type="submit"]:not(:last-child) {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:not(:last-child):hover {
+    background-color: #c82333;
+}
+
+/* Link Styles */
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #e1e1e1;
+}
+
+/* Layout for Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    a {
+        padding: 10px;
+    }
+}

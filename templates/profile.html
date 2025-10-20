@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/pass.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+   <header class="navbar">
+
+    
+     
+     <nav class="nav">
+        <a href="{{url_for('dashboard')}}">Home</a>
+        <a href="{{url_for('orders')}}">Orders</a>
+        <a href="{{url_for('businesses')}}">Businesses</a>
+        <a href="{{url_for('products')}}">Prodcuts</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+     </nav>
+
+   </header>
+
+   
+    <div class="container">
+        <aside class="side-bar">
+            <ul>
+                  <li><a href="{{url_for('dashboard')}}"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+                <li><a href="{{url_for('orders')}}"><i class="fa-solid fa-users"></i> Orders</a></li>
+                <li><a href="{{url_for('businesses')}}"><i class="fa-solid fa-briefcase"></i> Businesses</a></li>               
+                <li><a href="{{url_for('products')}}"><i class="fa-solid fa-bag-shopping"></i> Products</a></li>
+                <li><a href="{{url_for('profile')}}"><i class="fa-solid fa-circle-user"></i>  Profile</a></li>
+            </ul>
+        </aside>
+    <div class="content">
+        <h1>Welcome to Profile {{session['username']}}</h1>
+
+        <h2>Change Your Password</h2>
+
+        <!-- Show error message if any -->
+        {% if error %}
+            <div class="alert alert-danger">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+
+        <!-- Show success message if any -->
+        {% if success %}
+            <div class="alert alert-success">
+                <p>{{ success }}</p>
+            </div>
+        {% endif %}
+
+        <form class="login" method="POST" action="{{ url_for('profile') }}">
+            <div>
+                <label for="current_password">Current Password:</label>
+                <input type="password" name="current_password" id="current_password" required>
+            </div>
+            <div>
+                <label for="new_password">New Password:</label>
+                <input type="password" name="new_password" id="new_password" required>
+            </div>
+            <div>
+                <label for="confirm_password">Confirm New Password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </div>
+            <div class="add-button">
+                 <button type="submit">Update Password</button>
+            </div>
+           
+        </form>
+    </div>
+</body>
+</html>

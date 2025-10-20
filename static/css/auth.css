@@ -1,0 +1,73 @@
+
+
+h2{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   text-align: center;
+}
+
+.nav-img img{
+    width: 150px;
+    height: auto;
+}
+
+.container{
+    
+    padding: 40px;
+    border:1px solid;
+    margin : 0 auto;
+    width: 13%;
+    margin-top: 15rem;
+    box-shadow: 0 4px 12px  rgb(0, 102, 255);
+    border-radius: 8px;
+    
+}
+.login{
+    border-style: outset;
+    border: 10px;
+    border-radius: 2px;
+}
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+#email , #password , #confirm-password, #username{
+    margin: 0 auto;
+    width: 200px ;
+    padding: 5px;
+    display: block;
+  
+
+}
+#button {
+    
+    margin: 0 auto;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    width: 200px;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    text-align: center;
+    display: block;
+    border-radius: 4px;
+}
+.links{
+    text-align: center;
+    
+    color: rgb(0, 102, 255);
+    
+    
+}
+
+.links a {
+    text-decoration: none;
+    color: rgb(0, 102, 255);
+    margin: 5px 0;
+}
+a:hover{
+    color: black;
+    
+}
+

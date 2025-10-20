@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/comman.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+   <header class="navbar">
+    <div class="nav-img" style="color: black;">
+       <h1>ArtLine</h1>
+    </div>
+     <nav class="nav">
+        <a href="{{url_for('dashboard')}}">Home</a>
+        <a href="{{url_for('orders')}}">Orders</a>
+        <a href="{{url_for('businesses')}}">Businesses</a>
+        <a href="{{url_for('products')}}">Prodcuts</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+     </nav>
+
+   </header>
+
+   
+    <div class="container">
+        <aside class="side-bar">
+            <ul>
+                  <li><a href="{{url_for('dashboard')}}"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+                <li><a href="{{url_for('orders')}}"><i class="fa-solid fa-users"></i> Orders</a></li>
+                <li><a href="{{url_for('businesses')}}"><i class="fa-solid fa-briefcase"></i> Businesses</a></li>               
+                <li><a href="{{url_for('products')}}"><i class="fa-solid fa-bag-shopping"></i> Products</a></li>
+                <li><a href="{{url_for('profile')}}"><i class="fa-solid fa-circle-user"></i>  Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>Welcome {{session['username']}}!</h1>
+            <p>All Your businesses are listed here.</p>
+
+             {% if businesses %}
+
+           
+            <div class="cards-container">
+                {% for business in businesses %}
+                    <div class="card"  onclick="window.location.href='{{ url_for('update_business',  business_id=business[0]) }}'">
+                        <div class="card-content">
+                            <div class="business-details">
+                              <label for="business-name">Business Name:</label>
+                              <p class="business-name">{{ business[1] }}</p> 
+                            </div>
+                            <div class="business-details">
+                              <label for="business-address">Business Address:</label>
+                              <p class="business-address">{{ business[2] }}</p>
+                            </div>
+                            <div class="business-details">
+                                <label for="person-name">Person Name:</label>
+                                <p class="person-name">{{ business[3] }}</p>
+                            </div>
+                            <div class="business-details">
+                              <label for="phone-number">Phone Number:</label>
+                            
+                              <p class="phone-number">{{ business[4] }}</p> 
+                            </div>
+                              
+
+                             
+                        </div>
+                       
+                      </div>
+                 {% endfor %}
+               {% else %}
+                  <p>No Orders available.</p>
+               {% endif %}
+             </div>
+
+           
+             <div class="add-button">
+                <button onclick="window.location.href='{{ url_for('add_business') }}'"><i class="fa-solid fa-plus"></i> Add Business</button>
+             </div>
+             
+        </main>  
+    </div>
+    
+   
+    
+</body>
+</html>

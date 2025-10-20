@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/comman.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+   <header class="navbar">
+    <div class="nav-img" style="color: black;">
+       <h1>ArtLine</h1>
+    </div>
+    <nav class="nav">
+        <a href="{{ url_for('dashboard') }}">Home</a>
+        <a href="{{ url_for('orders') }}">Orders</a>
+        <a href="{{ url_for('businesses') }}">Businesses</a>
+        <a href="{{ url_for('products') }}">Products</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+   </header>
+
+   <div class="container">
+        <aside class="side-bar">
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}"><i class="fa-solid fa-house-chimney"></i> Home</a></li>
+                <li><a href="{{url_for('orders')}}"><i class="fa-solid fa-users"></i> Orders</a></li>
+                <li><a href="{{ url_for('businesses') }}"><i class="fa-solid fa-briefcase"></i> Businesses</a></li>
+                <li><a href="{{ url_for('products') }}"><i class="fa-solid fa-bag-shopping"></i> Products</a></li>
+                <li><a href="{{url_for('profile')}}"><i class="fa-solid fa-circle-user"></i>  Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>Welcome {{ session['username'] }}!</h1>
+            <p>All Products</p>
+            {% if products %}
+        <div class="cards-container">
+            {% for product in products %}
+                <div class="card" onclick="window.location.href='{{ url_for('update_products', product_id=product[0]) }}'">
+                    <div class="card-content">
+                        <label for="business-details">Product Name</label>
+                        <p class="product-name">{{ product[1] }}</p> <!-- Product Name -->
+                        <p class="product-type">{{ product[2] }}</p> <!-- Product Type -->
+                        <p class="product-description">{{ product[3] }}</p> <!-- Product Description -->
+                          
+
+                          
+                    </div>
+                   
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No products available.</p>
+    {% endif %}
+
+            <div class="add-button">
+                <button onclick="window.location.href='{{ url_for('add_product') }}'">
+                    <i class="fa-solid fa-plus"></i> Add Product
+                </button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Order</title>
+    <link rel="stylesheet" href="/static/css/add.css">
+</head>
+<body>
+     
+    <h1>Add a New Order</h1>
+
+    <form action="{{ url_for('add_orders') }}" method="POST">
+
+         <!-- Business Name -->
+        <label for="business">Business Name:</label>
+        <input type="text" id="business" name="business" placeholder="Enter Business Name" required><br><br>
+
+        <!-- Product Name -->
+        <label for="product">Product Name:</label>
+        <input type="text" id="product" name="product" placeholder="Enter Product Name" required><br><br>
+
+        <!-- Customer Name -->
+        <label for="customer">Customer Name:</label>
+        <input type="text" id="customer" name="customer" placeholder="Enter Customer Name" required><br><br>
+
+       <!-- Phone_number -->
+        <label for="phone_number">Phone Name:</label>
+        <input type="text" id="phone_number" name="phone_number" placeholder="Enter Phone Number" required><br><br>
+
+        
+
+        <!-- Quantity -->
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required><br><br>
+
+        <!-- Order Status -->
+        <label for="status">Order Status:</label>
+         <select id="status" name="status" required>
+           <option value="pending">Pending</option>
+           <option value="completed">Completed</option>
+         </select><br><br>
+
+
+        <!-- Submit Button -->
+         
+            <button id="add-button" type="submit">Add Order</button>
+
+         
+        
+    </form>
+
+</body>
+</html>
