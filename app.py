@@ -5,6 +5,10 @@ from dotenv import load_dotenv
 import os
 from waitress import serve
 
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
 
 load_dotenv()
 
